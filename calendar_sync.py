@@ -34,6 +34,7 @@ def create_calendar(service, region):
         "role": "reader",
     }
     service.acl().insert(calendarId=cal_id, body=acl_public).execute()
+    return cal_id
 
 
 def fetch_calendar(service, region):
@@ -49,7 +50,7 @@ def fetch_calendar(service, region):
 
     if not cal_id:
         logger.info("No calendar found. Creating new calendar...")
-        create_calendar(service, region)
+        cal_id = create_calendar(service, region)
     else:
         logger.info("Existing calendar found...")
 
