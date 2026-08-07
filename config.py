@@ -48,6 +48,7 @@ SERIES_LEN = {
 
 LOG_TO_FILE = True
 LOG_PATH = BASE_DIR / "log.txt"
+LOG_EVENT_DETAILS = False  # log each individual event created/updated, in addition to the per-region summary
 
 
 def configure_logging():

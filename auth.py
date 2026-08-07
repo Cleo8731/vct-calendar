@@ -25,4 +25,4 @@ def get_credentials():
 
 
 def get_calendar_service():
-    return build("calendar", "v3", credentials=get_credentials())
+    return build("calendar", "v3", credentials=get_credentials(), cache_discovery=False)

@@ -3,6 +3,8 @@ from time import sleep as wait
 
 from googleapiclient.errors import HttpError
 
+import config
+
 logger = logging.getLogger(__name__)
 
 
@@ -88,8 +90,10 @@ def update_calendar(service, cal_id, matches_info, region):
                 execute_with_retry(
                     service.events().insert(calendarId=cal_id, body=event_body), 5
                 )
-                logger.info(f"Created new event (id={match_id})... ")
+                if config.LOG_EVENT_DETAILS:
+                    logger.info(f"Created new event (id={match_id})... ")
             else:
-                logger.info(f"Updated existing event (id={match_id})... ")
+                if config.LOG_EVENT_DETAILS:
+                    logger.info(f"Updated existing event (id={match_id})... ")
 
     logger.info(f"VCT {region} Calendar successfully updated... ")
