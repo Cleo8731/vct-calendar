@@ -1,6 +1,6 @@
 # VCT Match Calendar
 
-Creates a set of publicly subscribeable Google Calendars containing all past and upcoming VALORANT Champions Tour (VCT) matches split by region. It scrapes the match data from [vlr.gg](https://www.vlr.gg).
+Creates a set of publicly subscribable Google Calendars containing all past and upcoming VALORANT Champions Tour (VCT) matches split by region. It scrapes the match data from [vlr.gg](https://www.vlr.gg).
 
 ## Subscribe
 
